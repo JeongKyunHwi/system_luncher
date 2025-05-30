@@ -67,7 +67,7 @@ public class BaseUI : MonoBehaviour
         }
         m_OnClose = null;    // 닫기 콜백 초기화
 
-     //   UIManager.Instance.CloseUI(this);    // UI 매니저를 통해 UI 닫기
+        UIManager.Instance.CloseUI(this);    // UI 매니저를 통해 UI 닫기
     }
     // 닫기 버튼 클릭 시 실행되는 메서드
     public virtual void OnClickCloseButton()
