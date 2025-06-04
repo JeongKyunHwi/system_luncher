@@ -19,6 +19,7 @@ public class DataTableManager : SingletonBehaviour<DataTableManager>
         base.Init(); // 부모 클래스 초기화 호출
 
         LoadChapterDataTable(); // 챕터 데이터 테이블 로드
+        LoadItemDataTable();
     }
 
     // 챕터 데이터 테이블 로드 함수

@@ -14,7 +14,8 @@ namespace Gpm.Ui
                 this.data = data;
             }
 
-            internal InfiniteScrollData data;
+            public InfiniteScrollData data { get; private set; }
+
             internal int index = -1;
 
             internal int itemIndex = -1;
@@ -314,6 +315,17 @@ namespace Gpm.Ui
                     selectCallback(data);
                 }
             }
+        }
+        // 데이터 리스트를 정렬하는 메서드
+        public void SortDataList(Comparison<DataContext> comparison)
+        {
+            // 주어진 비교 함수로 데이터 리스트 정렬
+            dataList.Sort(comparison);
+
+            // 아이템 리스트 업데이트 필요 플래그 설정
+            needUpdateItemList = true;
+            // 표시되는 아이템 업데이트
+            UpdateShowItem();
         }
     }
 }
